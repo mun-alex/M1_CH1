@@ -53,3 +53,46 @@ function deleteContent() {
     let content = document.getElementById('main');
     content.remove();
 }
+
+function showInnerHTMLMain() {
+    let mainContent = document.getElementById('main');
+    mainContent.innerHTML = 'hello';
+
+}
+
+let startBtn = document.getElementById('start');
+
+function changeColor() {
+    startBtn.style.backgroundColor = 'red';
+}
+
+function defaultColor() {
+    startBtn.style.backgroundColor = 'white';
+}
+
+startBtn.addEventListener('click', querySelectorCSS);
+startBtn.addEventListener('click', querySelectorsCSS);
+startBtn.addEventListener('mouseover', changeColor);
+startBtn.addEventListener('mouseout', defaultColor);
+
+let number = 11;
+localStorage.setItem('someNumber', number);
+
+let productItems = [
+    {'name': 'samsung', 'model': 'A5', 'price': '300'},
+    {'name': 'nokia', 'model': '3310', 'price': '120'},
+    {'name': 'xiaomi', 'model': 'mi11 Ultra', 'price': '1000'}
+]
+
+localStorage.setItem('productItems', JSON.stringify(productItems));
+
+
+console.log(JSON.parse(localStorage.getItem('productItems')));
+
+let shop = document.getElementById('shop');
+
+for(let i = 0; i < productItems.length; i++) {
+    let element = document.createElement('h6');
+    element.innerText = productItems[i].name;
+    shop.append(element);
+}
