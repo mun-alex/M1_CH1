@@ -13,3 +13,12 @@
 .ml-20 {
     margin-left: 20px;
 }
+
+.fs-18 {
+    font-size: 18px;
+}
+
+.shopItem {
+    border: 1px solid black;
+    padding: 5px;
+}
